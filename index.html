@@ -63,39 +63,22 @@
           </div>
         </div>
       </section>
+      <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector("#navLinks");
+
+        if (menuButton && navLinks) {
+          menuButton.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+            const isOpen = navLinks.classList.toggle("is-open");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+          });
+        }
+      </script>
     </main>
 
     <footer>
       <p>&copy; 2026 Kelompok 5</p>
     </footer>
-
-    <script>
-      console.log("error ini");
-
-      const namakelompok = "kelasik 2026";
-      const jumlahAnggota = 5;
-
-      console.log(namakelompok, jumlahAnggota);
-
-      const helloButton = document.querySelector("#helloButton");
-      const helloResult = document.querySelector("#helloResult");
-
-      if (helloButton && helloResult) {
-        helloButton.addEventListener("click", () => {
-          helloResult.textContent = "Halo! Tombol berhasil diklik";
-        });
-      }
-
-      const menuButton = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector("#navLinks");
-
-      if (menuButton && navLinks) {
-        menuButton.addEventListener("click", () => {
-          navLinks.classList.toggle("show");
-          const isOpen = navLinks.classList.toggle("is-open");
-          menuButton.setAttribute("aria-expanded", String(isOpen));
-        });
-      }
-    </script>
   </body>
 </html>
