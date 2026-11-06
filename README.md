@@ -20,4 +20,4 @@ Website tugas kelompok **Praktikum Web Kelasik 2026** — STT-NF.
 
 ## Teknologi
 
-HTML CSS dan JavaScript.
+HTML CSS dan JavaScript (internal).
