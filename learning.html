@@ -40,6 +40,20 @@
           <h3>Deskripsi Pembelajaran</h3>
         </div>
       </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const menuButton = document.querySelector(".menu-toggle");
+          const navLinks = document.querySelector("#navLinks");
+
+          if (menuButton && navLinks) {
+            menuButton.addEventListener("click", () => {
+              navLinks.classList.toggle("show");
+              const isOpen = navLinks.classList.contains("show");
+              menuButton.setAttribute("aria-expanded", String(isOpen));
+            });
+          }
+        });
+      </script>
     </main>
     <footer>&copy; 2026 Kelompok 5</footer>
   </body>
