@@ -11,10 +11,20 @@
     <header class="navbar">
       <a href="index.html" class="logo">Kelompok 5</a>
 
-      <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="team.html">Our Team</a>
-        <a href="learning.html">Learning</a>
+      <nav class="navbar1" aria-label="Navigasi utama">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          Menu
+        </button>
+        <div class="navlink" id="navLinks">
+          <a href="index.html" class="active">Home</a>
+          <a href="team.html">Our Team</a>
+          <a href="learning.html">Learning</a>
+        </div>
       </nav>
     </header>
 
@@ -24,7 +34,7 @@
           <h1>Selamat Datang di Web Kelompok 5</h1>
 
           <p class="description">
-            Web ini di buat untuk belajar tentang HTML dan CSS di event kelasik
+            Web ini dibuat untuk belajar tentang HTML dan CSS di event kelasik
           </p>
 
           <a href="team.html" class="main-button"> Liat-liat Foto Kita → </a>
@@ -34,27 +44,61 @@
           <div class="polaroid photo-one">
             <img
               src="aset/img/WhatsApp Image 2026-10-24 at 16.26.23 (1).jpeg"
-              alt="Foto Kelasik"
+              alt="Foto Kelasik 1"
             />
           </div>
 
           <div class="polaroid photo-two">
             <img
               src="aset/img/WhatsApp Image 2026-10-24 at 16.26.22.jpeg"
-              alt="Foto Kelasik"
+              alt="Foto Kelasik 2"
             />
           </div>
 
           <div class="polaroid photo-three">
             <img
               src="aset/img/WhatsApp Image 2026-10-24 at 16.26.22.jpeg"
-              alt="Foto kelasik"
+              alt="Foto Kelasik 3"
             />
           </div>
         </div>
       </section>
+
+      <button type="button" id="helloButton">Klik saya</button>
+      <p id="helloResult">belom ada pesan</p>
+    </main>
+
     <footer>
       <p>&copy; 2026 Kelompok 5</p>
     </footer>
+
+    <script>
+      console.log("error ini");
+
+      const namakelompok = "kelasik 2026";
+      const jumlahAnggota = 5;
+
+      console.log(namakelompok, jumlahAnggota);
+
+      const helloButton = document.querySelector("#helloButton");
+      const helloResult = document.querySelector("#helloResult");
+
+      if (helloButton && helloResult) {
+        helloButton.addEventListener("click", () => {
+          helloResult.textContent = "Halo! Tombol berhasil diklik";
+        });
+      }
+
+      const menuButton = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector("#navLinks");
+
+      if (menuButton && navLinks) {
+        menuButton.addEventListener("click", () => {
+          navLinks.classList.toggle("show");
+          const isOpen = navLinks.classList.toggle("is-open");
+          menuButton.setAttribute("aria-expanded", String(isOpen));
+        });
+      }
+    </script>
   </body>
 </html>

@@ -11,10 +11,20 @@
     <header class="navbar">
       <a href="index.html" class="logo">Kelompok 5</a>
 
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="team.html" class="active">Our Team</a>
-        <a href="learning.html">Learning</a>
+      <nav class="navbar1" aria-label="Navigasi utama">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          menu
+        </button>
+        <div class="navlink" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="team.html" class="active">Our Team</a>
+          <a href="learning.html">Learning</a>
+        </div>
       </nav>
     </header>
 
@@ -31,12 +41,17 @@
 
         <div class="polaroid">
           <img src="aset/img/mentor.jpeg" alt="Foto Kak Hasna" />
-          <p>Kak Hasna (Mentor)</p>
+          <p>Kak Hasna</p>
         </div>
 
         <div class="polaroid">
           <img src="aset/img/ame.jpeg" alt="Foto Hanif" />
           <p>Hanif (Anggota)</p>
+        </div>
+
+        <div class="polaroid">
+          <img src="aset/img/mentor1.jpeg" alt="Foto Kak Putri" />
+          <p>Kak Putri (Mentor)</p>
         </div>
 
         <div class="polaroid">
@@ -55,9 +70,18 @@
         </div>
       </section>
 
-      <div class="back-link">
-        <a href="index.html">← Back to Home</a>
-      </div>
+      <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector("#navLinks");
+
+        if (menuButton && navLinks) {
+          menuButton.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+            const isOpen = navLinks.classList.contains("show");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+          });
+        }
+      </script>
     </main>
 
     <footer>

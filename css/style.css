@@ -31,7 +31,7 @@ img {
   justify-content: space-between;
   align-items: center;
   gap: 25px;
-  padding: 15px 7%; /* Diubah dari 25px jadi 15px */
+  padding: 15px 7%;
   background-color: #d9bd8c;
 }
 
@@ -42,27 +42,31 @@ img {
   white-space: nowrap;
 }
 
-.navbar nav {
+.navbar1 {
+  display: flex;
+  align-items: center;
+}
+
+.navlink {
   display: flex;
   align-items: center;
   gap: 40px;
 }
 
-.navbar nav a {
+.navlink a {
   font-size: 15px;
   padding-bottom: 8px;
   border-bottom: 1px solid transparent;
   transition: 0.3s;
 }
 
-.navbar nav a:hover,
-.navbar nav a.active {
+.navlink a:hover,
+.navlink a.active {
   border-bottom-color: #63452f;
 }
 
-.header-button:hover {
-  background-color: #63452f;
-  color: #fffdf8;
+.menu-toggle {
+  display: none;
 }
 
 .hero {
@@ -70,7 +74,7 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  padding: 25px 7% 30px; /* Diubah agar lebih rapat */
+  padding: 25px 7% 30px;
 }
 
 .hero-text {
@@ -124,6 +128,7 @@ img {
   max-width: 420px;
   margin: 0 auto;
 }
+
 .polaroid {
   position: relative;
   background-color: #fffdf8;
@@ -247,7 +252,7 @@ img {
 
 .gallery-title {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .gallery-title .small-text {
@@ -267,188 +272,74 @@ img {
 
 .photo-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 45px 35px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px 40px;
+  max-width: 1050px;
+  margin: 0 auto;
+  align-items: start;
 }
 
 .photo-gallery .polaroid {
   width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
-.photo-gallery .polaroid:nth-child(odd) {
-  transform: rotate(-2deg);
+.photo-gallery .polaroid:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+  transform: rotate(-3deg);
+  margin-top: 60px;
 }
 
-.photo-gallery .polaroid:nth-child(even) {
+.photo-gallery .polaroid:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
   transform: rotate(2deg);
-}
-
-.photo-gallery .polaroid:hover {
-  transform: rotate(0deg) translateY(-5px);
-}
-
-.photo-gallery .polaroid img {
-  height: 250px;
-}
-
-.back-link {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.back-link a {
-  color: #79634e;
-  border-bottom: 1px solid #92765b;
-  padding-bottom: 5px;
-}
-
-.back-link a:hover {
-  color: #493321;
-}
-
-footer {
-  text-align: center;
-  padding: 12px 15px;
-  background-color: #92765b;
-  color: #dfd1bd;
-  font-size: 14px;
-  font-weight: bold;
   margin-top: 0;
 }
 
-@media (max-width: 900px) {
-  .navbar {
-    flex-wrap: wrap;
-  }
-
-  .navbar nav {
-    gap: 22px;
-  }
-
-  .hero {
-    gap: 25px;
-  }
-
-  .hero-photos {
-    flex: 1;
-    min-width: 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: center;
-    gap: 15px;
-    max-width: 380px;
-    margin: 0 auto;
-  }
-
-  .hero-photos .polaroid {
-    padding: 8px 8px 18px;
-  }
-
-  .hero-photos .polaroid img {
-    display: block;
-    width: 100%;
-    height: 130px; /* Dikecilkan jadi 130px agar pasti muat 1 layar */
-    object-fit: cover;
-  }
-
-  .polaroid img {
-    height: 170px;
-  }
-
-  .photo-gallery .polaroid img {
-    height: 200px;
-  }
+.photo-gallery .polaroid:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+  transform: rotate(3deg);
+  margin-top: 50px;
 }
 
-@media (max-width: 700px) {
-  .navbar {
-    padding: 22px 5%;
-  }
+.photo-gallery .polaroid:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+  transform: rotate(-2deg);
+  margin-top: 0;
+}
 
-  .navbar nav {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-  }
+.photo-gallery .polaroid:nth-child(5) {
+  grid-column: 1;
+  grid-row: 3;
+  transform: rotate(-2deg);
+  margin-top: 0px;
+}
 
-  .logo {
-    font-size: 23px;
-  }
+.photo-gallery .polaroid:nth-child(6) {
+  grid-column: 2;
+  grid-row: 3;
+  transform: rotate(-3deg);
+  margin-top: 60px;
+}
 
-  .header-button {
-    padding: 9px 13px;
-    font-size: 12px;
-  }
+.photo-gallery .polaroid:nth-child(7) {
+  grid-column: 3;
+  grid-row: 3;
+  transform: rotate(2deg);
+  margin-top: 0px;
+}
 
-  .hero {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 35px 6% 50px;
-  }
+.photo-gallery .polaroid:hover {
+  transform: rotate(0deg) translateY(-8px) scale(1.05) !important;
+}
 
-  .hero-text,
-  .hero-photos {
-    width: 100%;
-  }
-
-  .hero-photos {
-    margin-top: 25px;
-  }
-
-  .hero-text h1 {
-    font-weight: bold;
-    font-size: 45px;
-  }
-
-  .navbar nav {
-    gap: 20px;
-  }
-
-  .hero-text h1 {
-    font-size: 38px;
-  }
-
-  .hero-photos {
-    gap: 15px;
-  }
-
-  .polaroid {
-    padding: 8px 8px 23px;
-  }
-
-  .polaroid img {
-    height: 130px;
-  }
-
-  .photo-three {
-    width: 70%;
-  }
-
-  .section-heading h2 {
-    font-size: 11px;
-    letter-spacing: 1px;
-  }
-
-  .section-heading a {
-    font-size: 12px;
-  }
-
-  .preview-list {
-    grid-template-columns: 1fr;
-  }
-
-  .preview-list img {
-    height: 220px;
-  }
-
-  .photo-gallery {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .photo-gallery .polaroid img {
-    height: 260px;
-  }
+.photo-gallery .polaroid img {
+  height: 230px;
 }
 
 main,
@@ -500,8 +391,12 @@ main,
   font-weight: bold;
 }
 
-@media (max-width: 700px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
+footer {
+  text-align: center;
+  padding: 12px 15px;
+  background-color: #92765b;
+  color: #dfd1bd;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: auto;
 }
