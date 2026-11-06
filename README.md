@@ -4,13 +4,13 @@ Website tugas kelompok **Praktikum Web Kelasik 2026** — STT-NF.
 
 ## Anggota Tim
 
-| No | Nama   | Peran  |
-|----|--------|--------|
-| 1  | Hanif  | Design |
-| 2  | Hamdan | Design |
-| 3  | Afnan  | Design |
-| 4  | Azzam  | Design |
-| 5  | Devina | Design |
+| No  | Nama    | Peran                            | Kontribusi                                                 |
+| --- | ------- | -------------------------------- | ---------------------------------------------------------- |
+| 1   | Hanif   | Front-End Developer & Prototyper | Membuat prototype dan membangun website                    |
+| 2   | Afnan   | Version Control & Color Lead     | Menentukan warna, upload proyek ke GitHub, riset referensi |
+| 3   | Hamdani | Research Contributor             | Mencari referensi                                          |
+| 4   | Azzam   | Research Contributor             | Mencari referensi                                          |
+| 5   | Devina  | Research Contributor             | Mencari referensi                                          |
 
 ## Halaman
 
